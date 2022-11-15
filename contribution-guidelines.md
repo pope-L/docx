@@ -8,11 +8,11 @@
 
 -   Follow Prettier standards, and consider using the [Prettier VSCode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) plugin.
 
--   Follow the `TSLint` rules
+-   Follow the `ESLint` rules
 
 ## Always think about the user
 
-Put yourself in their position, and imagine how they would feel about your feature you wrote.
+Put yourself in their position, and imagine how they would feel about the feature you wrote.
 
 1. Is it easy to use?
 2. Has it been documented well?
@@ -26,13 +26,15 @@ Please write good commit messages when making a commit: https://chris.beams.io/p
 
 **Do not:**
 
+<!-- cspell:disable -->
 ```
 c // What?
-rtl // Adding acryonyms without explaining anything else is not helpful
+rtl // Adding acronyms without explaining anything else is not helpful
 works! // Glad its working, but the message is not helpful
 demo updated // Getting better, but capitalize the first letter
 Unesesary coment removed // Make sure to use correct spelling
 ```
+<!-- cspell:enable -->
 
 **Do**
 
@@ -42,9 +44,9 @@ Unesesary coment removed // Make sure to use correct spelling
     public float(tableFloatOptions: ITableFloatOptions): Table
 ```
 
-## Delcariative API
+## Declarative API
 
-Make sure the API is declarative, so no _method calling_ or _mutation_. This is a design decision, consistent with the rest of the project. There are benefits to delcariative code over other styles of code, explained here: https://dzone.com/articles/why-declarative-coding-makes-you-a-better-programm
+Make sure the API is declarative, so no _method calling_ or _mutation_. This is a design decision, consistent with the rest of the project. There are benefits to declarative code over other styles of code, explained here: https://dzone.com/articles/why-declarative-coding-makes-you-a-better-programm
 
 **Do not:**
 

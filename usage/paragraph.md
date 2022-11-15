@@ -2,7 +2,7 @@
 
 > Everything (text, images, graphs etc) in OpenXML is organized in paragraphs.
 
-!> Paragraphs requires an understanding of [Sections](sections.md).
+!> Paragraphs requires an understanding of [Sections](usage/sections.md).
 
 You can create `Paragraphs` in the following ways:
 
@@ -16,7 +16,7 @@ const paragraph = new Paragraph("Short hand Hello World");
 
 ### Children Method
 
-This method is useful for adding different [text](text.md) with different styles, [symbols](symbols.md), or adding [images](images.md) inline.
+This method is useful for adding different [text](usage/text.md) with different styles, [symbols](usage/symbols.md), or adding [images](usage/images.md) inline.
 
 ```ts
 const paragraph = new Paragraph({
@@ -111,7 +111,7 @@ const paragraph = new Paragraph({
 
 ## Border
 
-Add borders to a `Paragraph`. Good for making the `Paragraph` stand out
+Add borders to a `Paragraph`. Good for making the `Paragraph` stand out. Border top and border bottom can be used as a horizontal rule (also known as horizontal line).
 
 #### IBorderPropertyOptions
 
@@ -121,7 +121,7 @@ Add borders to a `Paragraph`. Good for making the `Paragraph` stand out
 | -------- | -------- | -------- |
 | color    | `string` | Required |
 | space    | `number` | Required |
-| value    | `string` | Required |
+| style    | `string` | Required |
 | size     | `number` | Required |
 
 **Example:**
@@ -135,13 +135,13 @@ const paragraph = new Paragraph({
         top: {
             color: "auto",
             space: 1,
-            value: "single",
+            style: "single",
             size: 6,
         },
         bottom: {
             color: "auto",
             space: 1,
-            value: "single",
+            style: "single",
             size: 6,
         },
     },
@@ -180,12 +180,12 @@ Adding spacing between paragraphs
 
 ### ISpacingProperties
 
-| Property | Type           | Notes    |
-| -------- | -------------- | -------- |
-| after    | `number`       | Optional |
-| before   | `number`       | Optional |
-| line     | `number`       | Optional |
-| lineRule | `LineRuleType` | Optional |
+| Property | Type           | Notes    | Possible Values               |
+| -------- | -------------- | -------- | ----------------------------- |
+| after    | `number`       | Optional |                               |
+| before   | `number`       | Optional |                               |
+| line     | `number`       | Optional |                               |
+| lineRule | `LineRuleType` | Optional | `AT_LEAST`, `EXACTLY`, `AUTO` |
 
 **Example:**
 

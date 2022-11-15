@@ -8,24 +8,24 @@ Every Section has a sections which you can define its Headers and Footers:
 const doc = new Document({
     sections: [{
         headers: {
-            default: new Header({ // The standard default header
+            default: new Header({ // The standard default header on every page or header on odd pages when the 'Different Odd & Even Pages' option is activated
                 children: [],
             }),
-            first: new Header({ // The first header
+            first: new Header({ // The header on first page when the 'Different First Page' option is activated
                 children: [],
             }),
-            even: new Header({ // The header on every other page
+            even: new Header({ // The header on even pages when the 'Different Odd & Even Pages' option is activated
                 children: [],
             }),
         },
         footers: {
-            default: new Footer({ // The standard default footer
+            default: new Footer({ // The standard default footer on every page or footer on odd pages when the 'Different Odd & Even Pages' option is activated
                 children: [],
             }),
-            first: new Footer({ // The first footer
+            first: new Footer({ // The footer on first page when the 'Different First Page' option is activated
                 children: [],
             }),
-            even: new Footer({ // The footer on every other page
+            even: new Footer({ // The footer on even pages when the 'Different Odd & Even Pages' option is activated
                 children: [],
             }),
         },
@@ -41,6 +41,17 @@ Example showing basic header and footer
 [Example](https://raw.githubusercontent.com/dolanmiu/docx/master/demo/8-header-footer.ts ':include')
 
 _Source: https://github.com/dolanmiu/docx/blob/master/demo/8-header-footer.ts_
+
+## Different First Page
+
+To specify `'Different First Page'`, set `titlePage: true` in the sections array as shown below.
+
+```
+sections: [
+        {
+          properties: {
+            titlePage: true,
+```
 
 ## Multiple Headers and Footers
 

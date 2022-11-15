@@ -53,6 +53,18 @@ const table = new Table({
 });
 ```
 
+### Set Indent
+
+```ts
+const table = new Table({
+    ...,
+    indent: {
+        size: 600,
+        type: WidthType.DXA,
+    }
+});
+```
+
 ## Table Row
 
 A table consists of multiple `table rows`. Table rows have a list of `children` which accepts a list of `table cells` explained below. You can create a simple `table row` like so:
@@ -92,7 +104,7 @@ Here is a list of options you can add to the `table row`:
 | children    | `Array<TableCell>`                     | Required |
 | cantSplit   | `boolean`                              | Optional |
 | tableHeader | `boolean`                              | Optional |
-| height      | `{ height: number, rule: HeightRule }` | Optional |
+| height      | `{ value: number, rule: HeightRule }`  | Optional |
 
 ### Repeat row
 
@@ -145,7 +157,7 @@ const tableRow = new TableRow({
 | Property      | Type                                | Notes                                                       |
 | ------------- | ----------------------------------- | ----------------------------------------------------------- |
 | children      | `Array<Paragraph or Table>`         | Required. You can nest tables by adding a table into a cell |
-| shading       | `ITableShadingAttributesProperties` | Optional                                                    |
+| shading       | `IShadingAttributesProperties`      | Optional                                                    |
 | margins       | `ITableCellMarginOptions`           | Optional                                                    |
 | verticalAlign | `VerticalAlign`                     | Optional                                                    |
 | columnSpan    | `number`                            | Optional                                                    |
@@ -171,7 +183,7 @@ const cell = new TableCell({
         top: {
             style: BorderStyle.DASH_DOT_STROKED,
             size: 1,
-            color: "red",
+            color: "ff0000",
         },
         bottom: {
             style: BorderStyle.THICK_THIN_MEDIUM_GAP,
@@ -190,12 +202,12 @@ Google DOCS does not support start and end borders, instead they use left and ri
 const cell = new TableCell({
     ...,
     borders: {
-        top: {
+        left: {
             style: BorderStyle.DOT_DOT_DASH,
             size: 3,
-            color: "green",
+            color: "00FF00",
         },
-        bottom: {
+        right: {
             style: BorderStyle.DOT_DOT_DASH,
             size: 3,
             color: "ff8000",
@@ -230,18 +242,12 @@ const cell = new TableCell({
 
 `WidthType` values can be:
 
-| Property | Notes                             |
-| -------- | --------------------------------- |
-| AUTO     |                                   |
-| DXA      | value is in twentieths of a point |
-| NIL      | is considered as zero             |
-| PCT      | percent of table width            |
-
-#### Example
-
-```ts
-cell.Properties.setWidth(100, WidthType.DXA);
-```
+| Property   | Notes                             |
+| ---------- | --------------------------------- |
+| AUTO       |                                   |
+| DXA        | Value is in twentieths of a point |
+| NIL        | Is considered as zero             |
+| PERCENTAGE | Percent of table width            |
 
 ### Nested Tables
 

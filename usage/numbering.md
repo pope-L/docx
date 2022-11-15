@@ -37,7 +37,7 @@ sub-sublists, etc. Each level includes the following properties:
     numbers from each numbering level before this one. Thus a level
     text of `%d)` with a number format of `lowerLetter` would result in
     the sequence "a)", "b)", ...
-*   and a few others, which you can see in the OXML spec section 17.9.6
+*   and a few others, which you can see in the OOXML spec section 17.9.6
 
 ## Document-level bullets/numbering definitions (concrete)
 
@@ -85,4 +85,35 @@ You can then apply your concrete style to paragraphs using the
 topLevelP.setNumbering(concrete, 0);
 subP.setNumbering(concrete, 1);
 subSubP.setNumbering(concrete, 2);
+```
+
+## Unindent numbering 
+
+Default:1.  test
+
+After:1.test
+
+Use default numbering have indent,If you want unindent numbering
+
+How to custom number see the demo:
+https://runkit.com/dolanmiu/docx-demo3
+
+```ts
+
+enum LevelSuffix {
+    NOTHING = "nothing",
+    SPACE = "space",
+    TAB = "tab"
+}
+
+// custom numbering 
+const levels=[
+{
+    level: 0,
+    format: "decimal",
+    text: "%1.",
+    alignment: AlignmentType.START,
+    suffix: LevelSuffix.NOTHING,    // Cancel intent
+}]
+    
 ```
